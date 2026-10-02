@@ -1,5 +1,5 @@
 package com.airbnb.projects.airBnbApp.controller;
-
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import  com.airbnb.projects.airBnbApp.dto.BookingDto;
 import com.airbnb.projects.airBnbApp.dto.HotelDto;
 import com.airbnb.projects.airBnbApp.dto.HotelReportDto;
@@ -7,6 +7,7 @@ import com.airbnb.projects.airBnbApp.entity.Hotel;
 import com.airbnb.projects.airBnbApp.service.BookingService;
 import com.airbnb.projects.airBnbApp.service.HotelService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/admin/hotels")
+@SecurityRequirement(name = "bearerAuth")
 @RequiredArgsConstructor
 @Slf4j
 public class HotelController {

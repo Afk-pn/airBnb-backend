@@ -65,9 +65,10 @@ public class CheckoutServiceImpl implements CheckoutService{
             bookingRepository.save(booking);
 
             log.info("Session created successfully for booking with ID: {}", booking.getId());
-            return session.getUrl();
+            return session.getUrl(); //return stripe payment url page
 
-        } catch (StripeException e) {
+        } 
+        catch (StripeException e) {
             throw new RuntimeException(e);
         }
 

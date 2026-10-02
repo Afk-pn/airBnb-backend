@@ -114,7 +114,7 @@ public class RoomServiceImpl implements RoomService{
                 .orElseThrow(() -> new ResourceNotFoundException("Room not found with ID: "+roomId));
 
         modelMapper.map(roomDto, room);
-        room.setId(roomId);
+        room.setId(roomId); //dont want id to change
 
 //        TODO: if price or inventory is updated, then update the inventory for this room
         room = roomRepository.save(room);

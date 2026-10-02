@@ -17,7 +17,7 @@ import static com.airbnb.projects.airBnbApp.util.AppUtils.getCurrentUser;
 
 @Service
 @RequiredArgsConstructor
-@Slf4j
+@Slf4j  //gives log info and log error
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     private final UserRepository userRepository;

@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import java.util.Optional;
 
 public interface HotelMinPriceRepository extends JpaRepository<HotelMinPrice, Long> {
-
+    //new HotelPriceDto(hotel, averagePrice)
     @Query("""
             SELECT new  com.airbnb.projects.airBnbApp.dto.HotelPriceDto(i.hotel, AVG(i.price))
             FROM HotelMinPrice i
@@ -22,7 +22,7 @@ public interface HotelMinPriceRepository extends JpaRepository<HotelMinPrice, Lo
                 AND i.hotel.active = true
            GROUP BY i.hotel
            """)
-    Page<HotelPriceDto> findHotelsWithAvailableInventory(
+    Page<HotelPriceDto> findHotelsWithAvailableInventory( //not yet added roomcoutn in jpql
             @Param("city") String city,
             @Param("startDate") LocalDate startDate,
             @Param("endDate") LocalDate endDate,

@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
             name = "unique_hotel_room_date",
             columnNames = {"hotel_id", "room_id", "date"}
 ))
-@Builder
+@Builder  //u can create obj without having to use getter and setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Inventory {
